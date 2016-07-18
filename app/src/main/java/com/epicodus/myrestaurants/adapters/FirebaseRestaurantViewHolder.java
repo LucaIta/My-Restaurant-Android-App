@@ -26,6 +26,9 @@ public class FirebaseRestaurantViewHolder extends RecyclerView.ViewHolder implem
     private static final int MAX_WIDTH = 200;
     private static final int MAX_HEIGHT = 200;
 
+    public ImageView mRestaurantImageView;
+
+
     View mView;
     Context mContext;
 
@@ -41,12 +44,14 @@ public class FirebaseRestaurantViewHolder extends RecyclerView.ViewHolder implem
         TextView nameTextView = (TextView) mView.findViewById(R.id.restaurantNameTextView);
         TextView categoryTextView = (TextView) mView.findViewById(R.id.categoryTextView);
         TextView ratingTextView = (TextView) mView.findViewById(R.id.ratingTextView);
+        mRestaurantImageView = (ImageView) mView.findViewById(R.id.restaurantImageView);
+
 
         Picasso.with(mContext)
                 .load(restaurant.getImageUrl())
                 .resize(MAX_WIDTH, MAX_HEIGHT)
                 .centerCrop()
-                .into(restaurantImageView);
+                .into(mRestaurantImageView);
 
         nameTextView.setText(restaurant.getName());
         categoryTextView.setText(restaurant.getCategories().get(0));
