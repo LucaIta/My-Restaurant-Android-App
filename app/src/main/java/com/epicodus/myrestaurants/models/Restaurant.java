@@ -18,6 +18,8 @@ public class Restaurant {
     List<String> categories = new ArrayList<>();
     private String pushId;
 
+
+
     // empty constructor needed by the Parceler library:
     public Restaurant() {}
 
